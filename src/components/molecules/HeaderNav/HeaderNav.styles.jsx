@@ -7,6 +7,7 @@ const HeaderNavStyles = styled.nav`
     right: 0;
     left: 0;
     z-index: 1030;
+    background: #ffffff;
     .h-nav-container{
         display: flex;
         align-items: center;
