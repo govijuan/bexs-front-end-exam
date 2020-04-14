@@ -1,8 +1,14 @@
 import React from 'react'
 
+import CartStyles from './Cart.styles'
 import HeaderNav from '../../molecules/HeaderNav'
+import CartContent from '../../organisms/CartContent'
 
 const Cart = ()=>(
-    <HeaderNav />
+    <CartStyles>
+        <HeaderNav />
+        <CartContent />
+    </CartStyles> 
 )
-export default HeaderNav
+
+export default Cart
