@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import PaymentProcess from '.'
 
 const PaymentProcessStyles = styled.div`
     width: 66%;
     background: #ffffff;
-    padding: 30px 15px;
+    padding: 30px 15px 30px 120px;
 `
 
 export default PaymentProcessStyles
