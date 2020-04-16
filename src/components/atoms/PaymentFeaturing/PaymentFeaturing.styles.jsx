@@ -4,7 +4,7 @@ const PaymentFeaturingStyles = styled.div`
     background: #DE4B4B;
     width: 33%;
     color: #ffffff;
-    padding: 30px 15px 30px 60px;
+    padding: 60px 15px 60px 60px;
     .change-payment-method{
         font-size: 13px;
         display: flex;
