@@ -1,10 +1,12 @@
 import React from 'react'
 import PaymentProcessStyles from './PaymentProcess.styles'
+import ProcessDisplay from '../ProcessDisplay'
+import CheckoutForm from '../CheckoutForm'
 
-
-const PaymentProcess = props => (
+const PaymentProcess = ({cardInfo, onCardNumChange, handleInputChange}) => (
     <PaymentProcessStyles>
-        {props.children}
+        <ProcessDisplay />
+        <CheckoutForm cardInfo={cardInfo} onCardNumChange={onCardNumChange} handleInputChange={handleInputChange}/>
     </PaymentProcessStyles>
 )
 

@@ -6,8 +6,8 @@ const NavList = props => (
     <NavListStyles>
         <ul>
             {
-                props.listInfo.map(listItem =>(
-                <li><a href={listItem.link}>{listItem.label}</a></li>
+                props.listInfo.map((listItem, key) =>(
+                <li key={key} ><a href={listItem.link}>{listItem.label}</a></li>
                 ))
             }
         </ul>

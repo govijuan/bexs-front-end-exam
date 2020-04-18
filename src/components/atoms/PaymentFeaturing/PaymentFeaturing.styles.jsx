@@ -4,18 +4,18 @@ const PaymentFeaturingStyles = styled.div`
     background: #DE4B4B;
     width: 33%;
     color: #ffffff;
-    padding: 30px 15px 30px 60px;
+    padding: 60px 15px 60px 60px;
     .change-payment-method{
         font-size: 13px;
         display: flex;
         flex-direction: row;
         align-items: center;
         line-height: 18px;
-    }
-    .svg-inline--fa{
-        height: 17px;
-        width: auto;
-        margin: 0 5px 0 0;
+        color: white;
+        text-decoration: none;
+        & > span {
+            margin: 0 0 0 5px;
+        }
     }
     .adding-new-ccard-txt{
         display: flex;
