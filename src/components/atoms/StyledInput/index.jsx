@@ -8,9 +8,9 @@ const StyledInput = props => (
             <label>{props.placeholder}</label>
         }
         { props.type === 'number' ?
-            <NumberFormat name={props.name} placeholder={props.placeholder} value={props.value} format={props.format} />
+            <NumberFormat name={props.name} placeholder={props.placeholder} value={props.value} format={props.format} onChange={props.onChange} />
             :
-            <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} />
+            <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} onChange={props.onChange} />
         }
     </StyledInputStyles>
 )

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import visaFlafImg from '../../../assets/images/visa-flag.png'
+import mastercardImg from '../../../assets/images/mastercard-flag.png'
+import amexFlagImg from '../../../assets/images/amex-flag.png'
 
 const GraphCreditCardStyles = styled.div`
     position: relative;
@@ -24,15 +26,28 @@ const GraphCreditCardStyles = styled.div`
     }
     .c-card-flag{
         height: 23px;
-        width: 70px;
+        width: 130px;
         display: block;
         margin: 0 0 30px;
     }
-    .c-card-flag.visa{
-        background: url(${visaFlafImg});
+    .c-card-flag{
+        
+        &.visa{
+            background: url(${visaFlafImg});
+            background-repeat: no-repeat;
+        }
+        &.mastercard{
+            background: url(${mastercardImg});
+            background-size: 100% 100%;
+        }
+        &.amex{
+            background: url(${amexFlagImg});
+            background-repeat: no-repeat;
+        }
+        
     }
     .c-card-number{
-        font-size: 26px;
+        font-size: 25px;
         margin-bottom: 30px;
     }
     .name-and-expire{

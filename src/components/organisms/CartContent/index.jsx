@@ -5,7 +5,7 @@ import LayoutContainer from '../../atoms/LayoutContainer'
 import CartCheckout from '../../molecules/CartCheckout'
 
 const CartContent = () => (
-    <CartContentStyles>
+    <CartContentStyles className='testing-class'>
         <LayoutContainer>
             <CartCheckout />
         </LayoutContainer>

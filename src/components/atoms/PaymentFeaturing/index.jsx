@@ -5,17 +5,22 @@ import Icon from '../../atoms/Icon'
 import AddCardIcon from '../../atoms/AddCardIcon'
 import GraphCreditCard from '../../atoms/GraphCreditCard'
 
-const PaymentFeaturing = props =>(
+const PaymentFeaturing = ({cardInfo}) =>(
     <PaymentFeaturingStyles>
-        <a className="change-payment-method">
-            <Icon icon="faAngleLeft" color="#ffffff" />
-            Alterar forma de pagamento
-        </a>
+        <div className="change-payment-method">
+            <Icon icon="faChevronLeft"/>
+            <span>Alterar forma de pagamento</span>
+        </div>
         <div className="adding-new-ccard-txt">
         <AddCardIcon />
         <span>Adicione um novo cartão de crédito</span>
         </div>
-        <GraphCreditCard />
+        <GraphCreditCard 
+            cardNumber={cardInfo.cardNumber.value} 
+            cardOwnerName={cardInfo.cardOwnerName.value} 
+            cardExpireDate={cardInfo.cardValidDate.value} 
+            cCardFlag={cardInfo.cardFlag.value}
+        />
     </PaymentFeaturingStyles>
 )
 

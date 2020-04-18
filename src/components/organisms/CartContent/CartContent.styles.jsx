@@ -6,7 +6,7 @@ const CartContentStyles = styled.div`
     align-items: flex-start;
     padding-top: 137px;
     background: #f7f7f7;
-    min-height: calc(100vh - 107px);
+    /*min-height: calc(100vh - 107px);*/
 `
 
 export default CartContentStyles

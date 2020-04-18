@@ -4,13 +4,20 @@ import StyledInput from '../../atoms/StyledInput'
 import Select from "react-dropdown-select";
 import SubmitButton from '../../atoms/SubmitButton'
 
-const CheckoutForm = ({}) => (
+const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange}) => (
     <CheckoutFormStyles>
-        <StyledInput type='number' name='card_number' placeholder='Número do cartão' format="#### #### #### ####" value={1} />
-        <StyledInput type='text' name='card_owners_name' placeholder='Nome (igual ao cartão)' value='Felipe B A Pio Nt' />
+        <StyledInput 
+            type='number' 
+            name='cardNumber' 
+            placeholder='Número do cartão' 
+            format="#### #### #### ####" 
+            value={cardInfo.cardNumber.value}
+            onChange={event =>{onCardNumChange(event)}}
+        />
+        <StyledInput type='text' name='cardOwnerName' placeholder='Nome (igual ao cartão)' value={cardInfo.cardOwnerName.value} onChange={event => {handleInputChange(event)}} />
         <div className='validade-ccv'>
-            <StyledInput type='number' name='card_validity' placeholder='Validade' format='##/##' value='06/26'/>
-            <StyledInput type='number' name='card_ccv' placeholder='CVV' format='###' value='542' />
+            <StyledInput type='number' name='cardValidDate' placeholder='Validade' format='##/##' value={cardInfo.cardValidDate.value} onChange={event => {handleInputChange(event)}} />
+            <StyledInput type='number' name='cardCCV' placeholder='CVV' format='###' value={cardInfo.cardCCV.value} onChange={event => {handleInputChange(event)}} />
         </div>
         <Select
             name='instalments'

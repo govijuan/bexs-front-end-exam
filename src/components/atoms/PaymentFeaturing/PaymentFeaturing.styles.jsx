@@ -11,11 +11,11 @@ const PaymentFeaturingStyles = styled.div`
         flex-direction: row;
         align-items: center;
         line-height: 18px;
-    }
-    .svg-inline--fa{
-        height: 17px;
-        width: auto;
-        margin: 0 5px 0 0;
+        color: white;
+        text-decoration: none;
+        & > span {
+            margin: 0 0 0 5px;
+        }
     }
     .adding-new-ccard-txt{
         display: flex;
