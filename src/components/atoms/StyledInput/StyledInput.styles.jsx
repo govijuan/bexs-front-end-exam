@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledInputStyles = styled.div`
     display: flex;
     flex-direction: column; 
-    margin-bottom: 40px;
+    margin-bottom: 18px;
     input{
         border: none;
         border-bottom: 1px solid #C9C9C9;
