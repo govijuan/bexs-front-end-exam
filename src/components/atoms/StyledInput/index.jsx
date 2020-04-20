@@ -4,9 +4,7 @@ import NumberFormat from 'react-number-format'
 
 const StyledInput = props => (
     <StyledInputStyles>
-        {props.value &&
-            <label>{props.placeholder}</label>
-        }
+            <label>{props.value && props.placeholder}</label>
         { props.type === 'number' ?
             <NumberFormat name={props.name} placeholder={props.placeholder} value={props.value} format={props.format} onChange={props.onChange} />
             :
