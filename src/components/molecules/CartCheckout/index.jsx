@@ -119,7 +119,8 @@ class CartCheckout extends Component {
             <CartCheckoutStyles >
                 <PaymentFeaturing 
                     cardInfo={this.state.checkout.cardInfo}
-                    focusedOnCCV={this.state.isSettingCCV} 
+                    focusedOnCCV={this.state.isSettingCCV}
+                    readyStage={this.state.checkout.readyStage}
                 />
                 <PaymentProcess
                     cardInfo={this.state.checkout.cardInfo}
