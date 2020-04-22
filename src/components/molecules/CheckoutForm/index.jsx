@@ -4,7 +4,7 @@ import StyledInput from '../../atoms/StyledInput'
 import Select from "react-dropdown-select";
 import SubmitButton from '../../atoms/SubmitButton'
 
-const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange, handleBlur}) => (
+const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange, handleBlur, handleCCVFocus}) => (
     <CheckoutFormStyles>
         <StyledInput 
             type='number' 
@@ -29,7 +29,9 @@ const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange, handleBlur}
                 type='number'
                 name='cardValidDate'
                 placeholder='Validade'
-                format='##/##' value={cardInfo.cardValidDate.value} onChange={event => {handleInputChange(event)}}
+                format='##/##'
+                value={cardInfo.cardValidDate.value}
+                onChange={event => {handleInputChange(event)}}
                 errorMsg={cardInfo.cardValidDate.errorMsg}
                 onBlur={e=>{handleBlur(e)}}
             />
@@ -38,8 +40,10 @@ const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange, handleBlur}
                 name='cardCCV'
                 placeholder='CVV'
                 format='###'
-                value={cardInfo.cardCCV.value} onChange={event => {handleInputChange(event)}}
+                value={cardInfo.cardCCV.value}
+                onChange={event => {handleInputChange(event)}}
                 errorMsg={cardInfo.cardCCV.errorMsg}
+                onFocus={e => {handleCCVFocus(e)}}
                 onBlur={e=>{handleBlur(e)}}
             />
         </div>
