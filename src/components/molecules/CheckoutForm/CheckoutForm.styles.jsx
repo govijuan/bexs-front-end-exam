@@ -4,6 +4,9 @@ const CheckoutFormStyles = styled.div`
     padding: 60px 0;
     @media (max-width: 991px){
         padding 0 0 30px;
+        width: 366.917px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .validade-ccv{
         display: flex;

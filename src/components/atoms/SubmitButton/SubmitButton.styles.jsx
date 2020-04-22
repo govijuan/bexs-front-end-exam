@@ -8,5 +8,8 @@ const SubmitButtonStyles = styled.button`
     font-size: 20px;
     padding: 10px 60px;
     float: right;
+    @media (max-width: 991px){
+        width: 100%;
+    }
 `
 export default SubmitButtonStyles
