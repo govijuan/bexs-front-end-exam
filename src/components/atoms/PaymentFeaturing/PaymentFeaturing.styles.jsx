@@ -20,6 +20,19 @@ const PaymentFeaturingStyles = styled.div`
         text-decoration: none;
         & > span {
             margin: 0 0 0 5px;
+            @media (max-width: 991px){
+                display: none;
+            }
+        }
+        .mobile-process-display{
+            text-align: center;
+            flex: auto;
+            @media(min-width: 992px){
+                display: none;
+            }
+        }
+        svg{
+            font-size: 25px;
         }
     }
     .adding-new-ccard-txt{
