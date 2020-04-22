@@ -4,6 +4,9 @@ const ProcessDisplayStyles = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    @media (max-width: 991px){
+        display: none;
+    }
     .stage-num{
         height: 22px;
         width: 22px;
