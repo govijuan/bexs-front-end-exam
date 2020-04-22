@@ -5,9 +5,20 @@ import amexFlagImg from '../../../assets/images/amex-flag.png'
 
 const GraphCreditCardStyles = styled.div`
     position: relative;
-    margin-right: -80px;
-    margin-bottom: 90px;
+    @media (min-width: 992px){
+        margin-right: -80px;
+        margin-bottom: 90px;
+    }
+    @media (max-width: 991px){
+        width: 366.917px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -110px;
+    }
     .c-card-bg{
+        img{
+            display: block;
+        }
     }
     .c-card-info{
         display: flex;

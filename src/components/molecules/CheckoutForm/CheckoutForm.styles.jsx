@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 const CheckoutFormStyles = styled.div`
     padding: 60px 0;
+    @media (max-width: 991px){
+        padding 0 0 30px;
+    }
     .validade-ccv{
         display: flex;
         flex-direction: row;

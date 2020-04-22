@@ -2,9 +2,14 @@ import styled from 'styled-components'
 
 const PaymentFeaturingStyles = styled.div`
     background: #DE4B4B;
-    width: 33%;
     color: #ffffff;
     padding: 60px 15px 60px 60px;
+    @media(min-width: 992px){
+        width: 33%;
+    }
+    @media (max-width: 991px) {
+        padding: 30px 30px 0;
+    }
     .change-payment-method{
         font-size: 13px;
         display: flex;
@@ -21,6 +26,10 @@ const PaymentFeaturingStyles = styled.div`
         display: flex;
         flex-direction: row;
         margin: 30px 0 15px;
+        @media(max-width: 991px){
+            align-items: center;
+            justify-content: center;
+        }
         span{
             display: inline-block;
             &:last-child{
