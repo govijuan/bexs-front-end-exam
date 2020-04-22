@@ -17,7 +17,7 @@ const PaymentFeaturing = ({cardInfo, focusedOnCCV}) =>(
         <span>Adicione um novo cartão de crédito</span>
         </div>
         {focusedOnCCV
-            ?<GraphicCreditCardBack />
+            ?<GraphicCreditCardBack valueCCV={cardInfo.cardCCV.value} />
             :<GraphCreditCard 
                 cardNumber={cardInfo.cardNumber.value} 
                 cardOwnerName={cardInfo.cardOwnerName.value} 
