@@ -8,13 +8,6 @@ const GraphCreditCardStyles = styled.div`
     margin-right: -80px;
     margin-bottom: 90px;
     .c-card-bg{
-        svg{
-            .a,.e{fill:none;}
-            .b{fill:url(#a);}
-            .c{clip-path:url(#b);}
-            .d{opacity:0.2;}
-            .e{stroke:#53aee0;stroke-linecap:round;stroke-width:0.6px;}
-        }
     }
     .c-card-info{
         display: flex;

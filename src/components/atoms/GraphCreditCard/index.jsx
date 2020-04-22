@@ -11,10 +11,10 @@ const GraphCreditCard = ({cardNumber, cardOwnerName, cardExpireDate='00/00', cCa
         </div>
         <div className='c-card-info'>
             <div className={'c-card-flag ' + cCardFlag}></div>
-            <div className='c-card-number' >{cardNumber}</div>
+            <div className='c-card-number' >{cardNumber ? cardNumber : '**** **** **** ****'}</div>
             <div className='name-and-expire'>
-                <div className='card-owner-name'>{cardOwnerName}</div>
-                <div className='card-expiring-date'>{cardExpireDate}</div>
+                <div className='card-owner-name'>{cardOwnerName ? cardOwnerName : 'Nome do Titular'}</div>
+                <div className='card-expiring-date'>{cardExpireDate ? cardExpireDate : '00/00'}</div>
             </div>
         </div>
     </GraphCreditCardStyles>
