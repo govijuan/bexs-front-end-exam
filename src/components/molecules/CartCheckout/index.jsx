@@ -37,7 +37,7 @@ class CartCheckout extends Component {
                     errorMsg: ''
                 },
                 installments: {
-                    value: 1,
+                    value: '1x de R$ 1200,00 sem juros',
                     isValid: false,
                     errorMsg: ''
                 }
@@ -61,6 +61,7 @@ class CartCheckout extends Component {
     }
 
     handleBlur(event) {
+        //console.log('Event target name: ', JSON.stringify(event.target.name))
         const inputName = event.target.name
         const inputValue = event.target.value
         this.validateField(inputName, inputValue)
@@ -70,30 +71,25 @@ class CartCheckout extends Component {
         // Field value can't be empty or null
         if(!fieldValue){
             this.setFieldAsInvalid (fieldId, 'O campo deve estar preenchido')
-        }else if (fieldId == 'cardNumber'){
-            const cleanValue = fieldValue.trim()
-            if(cleanValue.length < 16){
-                this.setFieldAsInvalid(fieldId, 'Faltam dígitos no número do cartão')
-            }
-        } else if (fieldId == 'cardValidDate') {
-            if (fieldValue < 5){
-                this.setFieldAsInvalid(fieldId, 'Por favor digite a data com mês e ano')
-            }
-        } else if(fieldId == 'cardCCV'){
-            if (fieldValue.trim() < 3){
+        }else if (fieldId == 'cardNumber' && fieldValue.trim().length < 19){
+            this.setFieldAsInvalid(fieldId, 'Faltam dígitos no número do cartão')
+        } else if (fieldId == 'cardValidDate' && fieldValue < 5) {
+            this.setFieldAsInvalid(fieldId, 'Por favor digite a data com mês e ano')
+        } else if(fieldId == 'cardCCV' && fieldValue.trim() < 3){
                 this.setFieldAsInvalid(fieldId, 'O numero CCV deve ter 3 dígitos')
-            }
         } else {
             this.setFieldAsValid (fieldId)
         }
     }
 
     setFieldAsInvalid (fieldId, errorMsg) {
+        console.log('Set as invalid field')
         this.updateStateByInputName (fieldId, errorMsg, 'errorMsg')
         this.updateStateByInputName (fieldId, false, 'isValid')
     }
 
     setFieldAsValid (fieldId){
+        console.log('Set as valid')
         this.updateStateByInputName (fieldId, '', 'errorMsg')
         this.updateStateByInputName (fieldId, true, 'isValid')
     }
@@ -114,7 +110,11 @@ class CartCheckout extends Component {
         return (
             <CartCheckoutStyles >
                 <PaymentFeaturing cardInfo={this.state.checkout.cardInfo} />
-                <PaymentProcess cardInfo={this.state.checkout.cardInfo} onCardNumChange={this.onCardNumChange.bind(this)} handleInputChange={this.handleInputChange.bind(this)} />
+                <PaymentProcess
+                    cardInfo={this.state.checkout.cardInfo}
+                    onCardNumChange={this.onCardNumChange.bind(this)}
+                    handleInputChange={this.handleInputChange.bind(this)}
+                    handleBlur={this.handleBlur.bind(this)} />
             </CartCheckoutStyles>
 
         )

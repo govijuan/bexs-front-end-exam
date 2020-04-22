@@ -4,7 +4,7 @@ import StyledInput from '../../atoms/StyledInput'
 import Select from "react-dropdown-select";
 import SubmitButton from '../../atoms/SubmitButton'
 
-const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange}) => (
+const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange, handleBlur}) => (
     <CheckoutFormStyles>
         <StyledInput 
             type='number' 
@@ -13,17 +13,44 @@ const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange}) => (
             format="#### #### #### ####" 
             value={cardInfo.cardNumber.value}
             onChange={event =>{onCardNumChange(event)}}
+            errorMsg={cardInfo.cardNumber.errorMsg}
+            onBlur={event => {handleBlur(event)}}
         />
-        <StyledInput type='text' name='cardOwnerName' placeholder='Nome (igual ao cartão)' value={cardInfo.cardOwnerName.value} onChange={event => {handleInputChange(event)}} />
+        <StyledInput 
+            type='text' name='cardOwnerName'
+            placeholder='Nome (igual ao cartão)'
+            value={cardInfo.cardOwnerName.value}
+            onChange={event => {handleInputChange(event)}}
+            errorMsg={cardInfo.cardOwnerName.errorMsg}
+            onBlur={e=>{handleBlur(e)}}
+        />
         <div className='validade-ccv'>
-            <StyledInput type='number' name='cardValidDate' placeholder='Validade' format='##/##' value={cardInfo.cardValidDate.value} onChange={event => {handleInputChange(event)}} />
-            <StyledInput type='number' name='cardCCV' placeholder='CVV' format='###' value={cardInfo.cardCCV.value} onChange={event => {handleInputChange(event)}} />
+            <StyledInput 
+                type='number'
+                name='cardValidDate'
+                placeholder='Validade'
+                format='##/##' value={cardInfo.cardValidDate.value} onChange={event => {handleInputChange(event)}}
+                errorMsg={cardInfo.cardValidDate.errorMsg}
+                onBlur={e=>{handleBlur(e)}}
+            />
+            <StyledInput
+                type='number'
+                name='cardCCV'
+                placeholder='CVV'
+                format='###'
+                value={cardInfo.cardCCV.value} onChange={event => {handleInputChange(event)}}
+                errorMsg={cardInfo.cardCCV.errorMsg}
+                onBlur={e=>{handleBlur(e)}}
+            />
         </div>
         <Select
             name='instalments'
-            searchable={false} 
+            searchable={false}
+            //className={'' + (props.errorMsg ? 'invalid' :'valid')}
+            required={true}
             onChange={()=>{}}
             placeholder='Selecione parcelamento...'
+            labelField='label'
             valueField='id'
             options={[ 
                         {id: 12, label: '12x de R$1000,00 sem juros'},
@@ -39,7 +66,7 @@ const CheckoutForm = ({cardInfo, onCardNumChange, handleInputChange}) => (
                         {id: 2, label: '2x de R$ 6000,00 sem juros'},
                         {id: 1, label: '1x de R$ 1200,00 sem juros'},
                     ]}
-            value={12}
+            values={["1x de R$ 1200,00 sem juros"]}
         />
         <SubmitButton />
     </CheckoutFormStyles>
