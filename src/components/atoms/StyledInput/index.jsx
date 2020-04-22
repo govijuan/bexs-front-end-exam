@@ -10,6 +10,7 @@ const StyledInput = props => (
             :
             <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} onChange={props.onChange} />
         }
+        <div className='field-err-msg'>{props.errorMsg && props.errorMsg}</div>
     </StyledInputStyles>
 )
 

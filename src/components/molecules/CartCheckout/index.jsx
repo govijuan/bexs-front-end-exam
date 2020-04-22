@@ -20,7 +20,6 @@ class CartCheckout extends Component {
                 cardFlag: {
                     value: null,
                     isValid: false,
-                    errorMsg: ''
                 },
                 cardOwnerName: {
                     value: '',
@@ -28,7 +27,7 @@ class CartCheckout extends Component {
                     errorMsg: ''
                 },
                 cardValidDate: {
-                    value: '00/00',
+                    value: '',
                     isValid: false,
                     errorMsg: ''
                 },
@@ -55,22 +54,60 @@ class CartCheckout extends Component {
         if(cleanInputVal.length > 1 && cleanInputVal.length < 3) {
             const cardFlagValue = getCardFlag(inputValue)
             console.log('cardFlag é: ', cardFlagValue)
-            this.updateStateByInputName('cardFlag', cardFlagValue)
+            this.updateStateByInputName('cardFlag', cardFlagValue, 'value')
         }
-        this.updateStateByInputName (inputName, inputValue)
+        this.updateStateByInputName (inputName, inputValue, 'value')
         
+    }
+
+    handleBlur(event) {
+        const inputName = event.target.name
+        const inputValue = event.target.value
+        this.validateField(inputName, inputValue)
+    }
+
+    validateField (fieldId, fieldValue) {
+        // Field value can't be empty or null
+        if(!fieldValue){
+            this.setFieldAsInvalid (fieldId, 'O campo deve estar preenchido')
+        }else if (fieldId == 'cardNumber'){
+            const cleanValue = fieldValue.trim()
+            if(cleanValue.length < 16){
+                this.setFieldAsInvalid(fieldId, 'Faltam dígitos no número do cartão')
+            }
+        } else if (fieldId == 'cardValidDate') {
+            if (fieldValue < 5){
+                this.setFieldAsInvalid(fieldId, 'Por favor digite a data com mês e ano')
+            }
+        } else if(fieldId == 'cardCCV'){
+            if (fieldValue.trim() < 3){
+                this.setFieldAsInvalid(fieldId, 'O numero CCV deve ter 3 dígitos')
+            }
+        } else {
+            this.setFieldAsValid (fieldId)
+        }
+    }
+
+    setFieldAsInvalid (fieldId, errorMsg) {
+        this.updateStateByInputName (fieldId, errorMsg, 'errorMsg')
+        this.updateStateByInputName (fieldId, false, 'isValid')
+    }
+
+    setFieldAsValid (fieldId){
+        this.updateStateByInputName (fieldId, '', 'errorMsg')
+        this.updateStateByInputName (fieldId, true, 'isValid')
     }
 
     handleInputChange (event) {
         let inputName = event.target.name
         let inputValue = event.target.value
-        this.updateStateByInputName (inputName, inputValue )
+        this.updateStateByInputName (inputName, inputValue , 'value' )
     }
 
-    updateStateByInputName (inputName,inputValue ) {
+    updateStateByInputName (inputName,updateValue, propToBeUpdated ) {
         let statusCopy = Object.assign({}, this.state)
-        statusCopy.checkout.cardInfo[inputName].value = inputValue
-        this.setState(statusCopy);
+        statusCopy.checkout.cardInfo[inputName][propToBeUpdated] = updateValue
+        this.setState(statusCopy)
     }
 
     render () {
