@@ -16,6 +16,7 @@ const StyledInputStyles = styled.div`
         color: #C9C9C9;
         text-align: left;
         margin: 0 0 5px;
+        height: 17px;
     }
 `
 
