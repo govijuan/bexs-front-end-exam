@@ -3,7 +3,7 @@ import React from 'react'
 import NavListStyles from './NavList.styles'
 
 const NavList = props => (
-    <NavListStyles>
+    <NavListStyles className={'' + (props.isListOpen ? 'show' : '')}>
         <ul>
             {
                 props.listInfo.map((listItem, key) =>(
