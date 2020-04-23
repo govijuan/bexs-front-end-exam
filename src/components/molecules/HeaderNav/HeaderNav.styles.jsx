@@ -11,6 +11,7 @@ const HeaderNavStyles = styled.nav`
     .h-nav-container{
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: space-between;
         @media (min-width: 768px) and (max-width: 991px){
             max-width: 540px;

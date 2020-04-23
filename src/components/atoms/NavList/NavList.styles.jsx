@@ -7,8 +7,17 @@ const NavListStyles = styled.div`
     align-items: center;
     box-sizing: border-box;
     @media (max-width: 991px){
-        display: none;
-    }
+        flex-basis: 100%;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        box-sizing: border-box;
+        border-top: 1px dashed #707070;
+    };
+    &:not(.show){
+        @media (max-width: 991px){
+            display: none;
+        }   
+    };
     ul{
         display: flex;
         flex-direction: row;
@@ -19,18 +28,30 @@ const NavListStyles = styled.div`
         padding-top: 1.75rem;
         padding-bottom: 1.75rem;
         list-style: none;
+        @media (max-width: 991px){
+            flex-direction: column;
+            flex-basis: 100%;
+            text-align: left;
+            padding-top: 0;
+            padding-bottom: 0;
+        };
         li{
             margin-right: 1rem;
             box-sizing: border-box;
+            &:not(last-child){
+                @media(max-width: 991px){
+                    border-bottom: 1px dashed #E6E6E6;
+                }
+            }
             &:last-child{
                 margin-right: 0;
-            }
+            } 
             a{
                 text-decoration: none;
                 display: block;
                 font-weight: 500;
                 padding: .5rem;
-                color: #3c3c3c
+                color: #3c3c3c;
             }
         }
     }
