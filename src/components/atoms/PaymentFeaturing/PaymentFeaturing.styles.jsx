@@ -10,6 +10,9 @@ const PaymentFeaturingStyles = styled.div`
     @media (max-width: 991px) {
         padding: 30px 30px 0;
     }
+    @media (max-width:430px){
+        padding: 15px 15px 0;
+    }
     .change-payment-method{
         font-size: 13px;
         display: flex;
