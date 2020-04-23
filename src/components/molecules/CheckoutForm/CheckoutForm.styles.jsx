@@ -8,6 +8,9 @@ const CheckoutFormStyles = styled.div`
         margin-left: auto;
         margin-right: auto;
     }
+    @media(max-width: 430px){
+        width: 100%;
+    }
     .validade-ccv{
         display: flex;
         flex-direction: row;
