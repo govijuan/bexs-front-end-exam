@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const LayoutContainerStyles = styled.div`
     flex-wrap: nowrap;
-    width: 100%;
+    
     margin-right: auto;
     margin-left: auto;
     @media(min-width: 524px){
@@ -17,6 +17,7 @@ const LayoutContainerStyles = styled.div`
     }
     @media (min-width: 992px){
         max-width: 960px;
+        width: 100%;
     }
     @media (min-width: 1200px){
         max-width: 1140px;

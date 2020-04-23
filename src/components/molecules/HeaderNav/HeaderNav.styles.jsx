@@ -12,15 +12,35 @@ const HeaderNavStyles = styled.nav`
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (min-width: 768px) and (max-width: 991px){
+            max-width: 540px;
+        }
     }
     .logo-link{
+        @media(max-width: 524px){
+            padding-left: 15px;
+        }
         svg{
+            @media(max-width: 430px){
+                height: 30px;
+                width: auto;
+            }
             .a{
                 fill:#00de91;
             }
             .b{
                 fill:#f9f9f9;
             }
+        }
+    }
+    .navbar-toggler{
+        background: transparent;
+        border: none;
+        @media(min-width: 992px){
+            display: none;
+        }
+        &:hover, &:active, &:focus{
+            fill: #00de91;
         }
     }
 `
