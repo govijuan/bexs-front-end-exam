@@ -6,6 +6,9 @@ const NavListStyles = styled.div`
     flex-grow: 1;
     align-items: center;
     box-sizing: border-box;
+    @media (max-width: 991px){
+        display: none;
+    }
     ul{
         display: flex;
         flex-direction: row;
