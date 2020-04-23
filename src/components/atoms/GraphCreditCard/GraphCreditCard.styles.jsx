@@ -15,9 +15,15 @@ const GraphCreditCardStyles = styled.div`
         margin-right: auto;
         margin-bottom: -110px;
     }
+    @media(max-width: 430px){
+        width: 100%
+    }
     .c-card-bg{
         img{
             display: block;
+            @media(max-width: 430px){
+                width: 100%
+            }
         }
     }
     .c-card-info{
@@ -33,6 +39,9 @@ const GraphCreditCardStyles = styled.div`
         width: 130px;
         display: block;
         margin: 0 0 30px;
+        @media(max-width: 430px){
+            margin: 0 0 15px;
+        }
     }
     .c-card-flag{
         
@@ -53,11 +62,18 @@ const GraphCreditCardStyles = styled.div`
     .c-card-number{
         font-size: 25px;
         margin-bottom: 30px;
+        @media(max-width: 430px){
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
     }
     .name-and-expire{
         display: flex;
         flex-direction: row;
         font-size: 17px;
+        @media(max-width: 430px){
+            font-size: 12px
+        }
     }
     .card-owner-name{
         align-self: flex-start;

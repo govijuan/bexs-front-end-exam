@@ -5,8 +5,10 @@ const LayoutContainerStyles = styled.div`
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    @media(min-width: 524px){
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
     @media (min-width: 576px){
         max-width: 540px;
     }
