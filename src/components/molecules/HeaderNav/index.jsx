@@ -10,7 +10,7 @@ const listInfo = [
     {link: '#', label: 'Link 3'}
 ]
 
-const HeaderNav = () => (
+const HeaderNav = ({isListOpen, handleToggleNavClick}) => (
     <HeaderNavStyles>
         <LayoutContainer className="h-nav-container">
             <a href="/" className="logo-link">
@@ -35,7 +35,7 @@ const HeaderNav = () => (
                     </g>
                 </svg>
             </a>
-            <button className='navbar-toggler'>
+            <button className='navbar-toggler' onClick={ e => {handleToggleNavClick(e)}}>
                 <i-feather>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         height="32px"
@@ -48,7 +48,7 @@ const HeaderNav = () => (
                     </svg>
                 </i-feather>
             </button>
-            <NavList listInfo={listInfo} />
+            <NavList listInfo={listInfo} isListOpen={isListOpen} />
         </LayoutContainer>
         
     </HeaderNavStyles>
